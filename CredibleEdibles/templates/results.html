@@ -1,0 +1,83 @@
+{% extends "basic.html" %}
+{% block head %}
+<title>Credible Edibles: Results</title>
+<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../static/bootstrap/css/style.css" rel="stylesheet">
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js"></script>
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css" rel="stylesheet"/>
+<style>
+  html, body, #map-container {
+  height: 80%;
+  
+}
+
+#map {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  }
+</style>
+{% endblock %}
+{% block body %}
+<div id="map-container">
+      <div id="map"></div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <br>
+      {% for i in jsList %}
+	  
+      <h6> {{i['properties']['title']}}</h6>
+	  {% for x in businessList %}
+		{% if i['properties']['title'] in x %}
+      {{x[i['properties']['title']]['rating']}} Stars<br>
+      {% for l in x[i['properties']['title']]['address'] %}
+			{{l}}
+			 {% endfor %}
+		{% endif %}
+	  {% endfor %}
+      <!--<p>{{i["address"]}}</p>-->
+      <br><br>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <a href="/" class="btn btn-default">Back to Home</a>
+    </div>
+  </div>
+</div>
+<script>
+  mapboxgl.accessToken = "{{mapbox_accessToken}}";
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v9',
+  center: {{loc | safe}},
+  zoom: 15
+  });
+
+  map.on('load', function () {
+  map.addSource("points", {
+  "type": "geojson",
+  "data": {
+  "type": "FeatureCollection",
+  "features": {{jsList | safe}}
+  }
+  });
+
+  map.addLayer({
+  "id": "points",
+  "type": "symbol",
+  "source": "points",
+  "layout": {
+  "icon-image": "{icon}-15",
+  "text-field": "{title}",
+  "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+  "text-offset": [0, 0.6],
+  "text-anchor": "top"
+  }
+  });
+  });
+</script>
+{% endblock %}

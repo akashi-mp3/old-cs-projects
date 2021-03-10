@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+	<a href="/settings/"> Settings </a>
+	 <a href="/logout/">Log Out</a>
+
+<script>
+	var today = new Date();
+	document.getElementById('dtText').innerHTML=today.toDateString();
+</script>
+{% endblock %}
+
+
+{% block style %}
+	.card {
+		margin:auto;
+		margin-top:2%;
+		radius:10px 10px 10px 10px;
+	}
+	.card-divider {
+		background:#4BA3C3;
+		border:#4BA3C3;
+	}
+	.card-section{
+		border:#4BA3C3;
+	}
+	.button{
+		margin: 20px 20px;
+		font-family: myFirstFont;
+        font-size: 40px;
+		background:#BA324F;
+		border-radius:50px;
+	}
+	img {
+		border-radius: 100px;
+	}
+
+	.marquee {
+   		width: 350px;
+   		height: 2.5em;
+   		margin: 0 auto;
+   		background:#CCE6F4;
+   		border-radius:10px;
+   		white-space: nowrap;
+   		overflow: hidden;
+   		box-sizing: border-box;
+   		color:blue;
+   		font-size:34px;
+	}
+
+	.marquee span {
+   		display: inline-block;
+   		padding-left: 100%;
+   		text-indent: 0;
+   		animation: marquee 15s linear infinite;
+	}
+
+	.marquee span:hover {
+    	animation-play-state: paused
+	}
+
+	@keyframes marquee {
+    	0%   { transform: translate(0, 0); }
+    	100% { transform: translate(-100%, 0); }
+	}
+{% endblock %}
+
+
+{% block body %}
+<div class="card" style="width: 98%; height: 50em;">
+<div align="center">
+
+		<p class="marquee">
+    	<span id="dtText"> Today is {{date}} </span>
+</p>
+
+	</div>
+<div class = "row">
+<div class = "large-12 columns" align= "center">
+		<br>
+		<img src="{{pfp}}" alt="profile" shape="circle" style="width:200px;height:200px;"> 
+</div>
+		
+</div>
+
+<div class = "row">
+		<!--MESSAGES-->
+		<div class= "large-6 columns">
+		<fieldset class="fieldset">
+		<legend>Your Matches and Messages</legend>
+				<form action="/matches/" method="POST">
+			<center>
+				<input type="submit" name="enter" class="button expanded" value="My Matches">
+			</center>
+		</form>
+
+		<form action="/messages/" method="POST">
+			<center>
+				<input type="submit" name="enter" class="button expanded" value="My Messages">
+			</center>
+		</form>
+	</fieldset>
+	</div>
+	<div class = "large-6 columns">
+		<fieldset class="fieldset">
+  			<legend>Things to Do With Your Significant Otter</legend>
+		<!--EVENTS-->
+			<form action="/yelpEvents/" method="POST">
+				<center>
+					<input type="submit" name="enter" class="button expanded" value="Food">
+				</center>
+			</form>
+			<form action="/EBevents/" method="POST">
+				<center>
+					<input type="submit" name="enter" class="button expanded" value="Events">
+				</center>
+			</form>
+		</fieldset>
+	</div>
+	</div>
+</div>
+
+
+{% endblock %}

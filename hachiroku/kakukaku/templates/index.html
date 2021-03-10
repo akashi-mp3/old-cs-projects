@@ -1,0 +1,69 @@
+<html>
+  <head>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+<!--    <link rel="stylesheet" href="../static/css/btn.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Home | Kakukaku!!</title>
+  
+  </head>
+  <body  scroll="no" style="overflow:hidden;">
+  
+   <div class="logo">
+     <a href="#"><span class="logo-text">Kakukaku!!</span></a>
+   </div>
+   <div class="burger">
+      
+     <div class="dropdown">
+
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:2.5em;color:black" aria-hidden="true"></span>
+       </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li>
+	    <a href="/profile/{{user}}">
+	      <span class="glyphicon glyphicon-user"></span>
+	      Profile
+	    </a>
+	  </li>
+	  
+	  <li role="separator" class="divider"></li>
+	  
+	  <li><a href="/logout/"><span class="glyphicon glyphicon-log-in"></span>
+	      Log out</a></li>
+	  
+        </ul>
+      </div>
+    </div>
+
+      <div class="full" style="background-image:url('../static/kkbg.png');background-size:cover;">
+	<div class="container" style="margin-bottom:7em;">
+
+	  
+	  <div class="row">
+	    {% if msg is defined %}
+	      <p>{{msg}}</p>
+	      {% endif %}
+	   <div class="col-sm-12 col-md-6">
+	     <h1 style="font-size: 5em;">Hello, {{user}}!</h1>
+	     <h2>You have {{rank}} wins</h2>
+	   </div>	   
+		   
+	  <div class="col-sm-12 col-md-6">
+	    <a class="btn btn-index btn-success btn-lg" id="btn-draw" href="/draw" role="button">Draw something</a>
+	    
+	    <a class="btn btn-index btn-warning btn-lg" id="btn-judge" href="/judge" role="button">Judge a game</a>
+
+	    <a class="btn btn-default btn-index btn-lg" id="btn-leaderboard" href="/leaderboard">View leaderboard</a>
+	  </div>
+
+	</div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

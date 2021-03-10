@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Draw {{word}} | Kakukaku!!</title>
+    <script src="../static/js/draw.js"></script>
+    <link href="../static/css/bloks.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body scroll="no" style="overflow:hidden">
+
+
+    <div class="container-fluid">
+      <div class="logo">
+	<span class="logo-text" style="font-size: 1.25em">Kakukaku!!</span>
+      </div>
+      <br/>
+      <h1>Keyword: <span id="word">{{word}}</span></h1>
+      <h2 id="define"></h2>
+      <h2 id="timeleft">60</h2>
+
+      <div class="d-flex flex-row justify-content-center">
+	<div class="p-2">
+	  <canvas id="doodle" width="500px" height="500px"></canvas>
+	  <img id="saved-img" alt="" src=""/>
+	  <div id="drawcircle"></div>
+	</div>
+	<div class="p-2 drawtool">
+	  <div id="blocks" class="vertical-flex">
+	    <div class="block primary-block" style="background-color:red;z-index: 1000">
+	      <div class="block sub-block" style="background-color:firebrick"></div>
+	      <div class="block sub-block" style="background-color:lightpink"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:orange">
+	      <div class="block sub-block" style="background-color:orangered"></div>
+	      <div class="block sub-block" style="background-color:coral"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:yellow">
+	      <div class="block sub-block" style="background-color:goldenrod"></div>
+	      <div class="block sub-block" style="background-color:khaki"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:green">
+	      <div class="block sub-block" style="background-color:darkgreen"></div>
+	      <div class="block sub-block" style="background-color:lightgreen"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:blue">
+	      <div class="block sub-block" style="background-color:darkblue"></div>
+	      <div class="block sub-block" style="background-color:lightblue"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:indigo">
+	      <div class="block sub-block" style="background-color:purple"></div>
+	      <div class="block sub-block" style="background-color:darkviolet"></div>
+	    </div>
+	    <div class="block primary-block" style="background-color:black">
+	      <div class="block sub-block" style="background-color:gray"></div>
+	      <div class="block sub-block" style="background-color:lightgray;border: 1px solid gray;"></div>
+	    </div>
+	    <div class="block primary-block eraser-blok" style="background-color:white;border: 1px solid gray;">
+	      <img alt="" class="eraser" src="/static/css/15409.png" width="25px" height="40px" />
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+
+      <div class="drawtool">
+	<div class="drawtool">
+	  <p><span id="stroke-width"> scroll to change brush size: 10</span>
+	    <input id="width" type="range" value="10" min="1" max="100"/>
+	  </p>
+	  <br/>
+	  <input id="cls" type="button" class="btn col-sm-3" value="Clear Canvas"/>
+	  <input id="push" type="button" class="btn col-sm-3" value="Upload Early"/>
+	</div>
+	<br/>
+	<br/>
+      </div>
+      
+      <form action="/uploadPic" method="POST" id="datForm">
+	<input name="pic" type="hidden" value="" id="upload"/>
+      </form>
+    </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<!-- 
+     Template for FRONT-END 
+     by Clyde "Thluffy" Sinclair 
+  -->
+
+<html>
+<head>
+<title>Triangle Form Front-end</title>
+
+#Team Late to Class - Lorenz Vargas, Dan Akim
+#IntroCS2 pd09
+#HW58 -- Getting Formal
+#2015-5-27
+
+</head>
+
+<body>
+
+  <h3>Finding the area of triangles!</h3>
+  <br>
+  #Team Late to Class - Lorenz Vargas, Dan Akim <br>
+  #IntroCS2 pd09 <br>
+  #HW58 -- Getting Formal <br>
+  #2015-5-27 <br>
+  Works in conjunction with triForm.py, which must reside in same directory as this file (triForm.html) on a web server.
+  <br>
+
+  <h4>Usage: </h4>
+  Enter the numerical value of a side of the the triangle you want to find the area of in the text field, click submit.
+  <br>
+  Your browser will use this data to form a new request to the server, triggering triForm.py, which will respond with a new page with the perimeter and area of the given triangle.
+  <br><br>
+
+  <form name="input" method="GET" action="triForm.py">
+    <br>
+    Triangle side A: <input type="text" name="side01"> 
+	<br>
+	Triangle side B: <input type="text" name="side02"> 
+	<br>
+	Triangle side C: <input type="text" name="side03">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

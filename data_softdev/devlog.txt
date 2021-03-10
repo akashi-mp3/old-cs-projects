@@ -1,0 +1,77 @@
+DevLog
+------
+
+dilmohamedS -- 2017-3-27 3:15
+Found SFI dictionary and created plans for usage
+
+venderbushW -- 2017-3-27 15:22
+Added Skeleton
+
+BigL -- 2017-3-28 15:10
+Finished Flask app stuff
+
+venderbushW -- 2017-3-28 15:15
+Implemented SFI Library
+
+venderbushW -- 2017-3-29 20:30
+Parsed data from SFI library
+Added basic get functions for data from SFI
+
+venderbushW -- 2017-3-31 21:45
+Finished basic get funcitons for data
+Added area calculation functions for display circles
+
+venderbushW -- 2017-4-01 13:03
+Finished bulk area calculation and get functions
+Added country code framework
+
+marksG -- 2017-4-02 10:30
+Finally finished the stupid masking
+
+venderbushW -- 2017-4-03 10:08
+Added getFlag with flag picture API
+
+venderbushW -- 2017-4-03 14:29
+Added countryCodes() function to get list of country codes
+
+marksG -- 2017-4-03 4:30
+Adding actual balls to js
+
+dilmohamedS 2017-4-03 6:30
+Bugchecking ball and border functions
+
+marksG -- 2017-4-04 4:30
+Loading a large set of random balls now, fixed scaling, fixed border
+
+marksG -- 2017-4-04 6:00
+Culled lots of bad entries from the list of countries
+
+BigL -- 2017-04-04 6:30
+Front-end work, will go on until relatively nice
+
+marksG -- 2017-4-05 7:00
+Movement, still glitchy
+
+marksG -- 2017-4-05 8:00
+Bar at the top to change years
+
+marksG -- 2017-4-05 11:00
+Unglitched the bar, made bouncing better, glitches not as bad
+
+venderbushW -- 2017-4-05 11:14
+Updated radius algorithm to make extremes more extreme!
+
+<<<<<<< HEAD
+dilmohamedS -- 2017-4-05 11:30
+bugfixing, trying to deal with teleportation glitch
+=======
+venderbushW -- 2017-4-05 11:40
+Added new flag functions
+
+venderbushW -- 2017-4-05 12:24
+Added missing data
+Added jinja functions
+
+BigL -- 2017-04-95 ???
+Debugging
+>>>>>>> 42809514d756cb8d2c73be91f4074bb92ec7079f

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!-- 
+     Template for FRONT-END 
+     by Clyde "Thluffy" Sinclair 
+  -->
+
+<html>
+<style>p.serif {font-family: "Comic Sans MS", cursive, sans-serif;}</style>
+<head>
+<title>Triangle Form Front-end</title>
+
+</head>
+
+<body>
+
+  <h3>Codify Stuff!</h3>
+  <br>
+  #Team Late to Class - Lorenz "Hollywood" Vargas, Dan "Snowshoes" Akim <br>
+  #IntroCS2 pd09 <br>
+  #HW59 -- Formal Textification <br>
+  #2015-5-28 <br>
+  Works in conjunction with textForm.py, which must reside in same directory as this file (triForm.html) on a web server.
+  <br>
+
+  <h4>Usage: </h4>
+  Enter some text, select what you want to do to it (ROT13 or Reverse), check out the checkboxes (bold, underline, italic) you want, then click submit.
+  <br>
+  Your browser will use this data to form a new request to the server, triggering textForm.py, which will respond with a new page with text.
+  <br><br>
+
+  <form name="input" method="GET" action="textForm.py">
+    <input type="radio" name="option" value="ROT13">ROT13<br> 
+	<input type="radio" name="option" value="Reverse">Reverse<br>
+	<br>
+	<input type="checkbox" name="fancy" value="Bold">Bold<br>
+	<input type="checkbox" name="fancy" value="Underline">Underline<br>
+	<input type="checkbox" name="fancy" value="Italic">Italic<br>
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

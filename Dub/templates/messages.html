@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+	 <a href="/settings/"> Settings </a>
+	 <a href="/logout/">Log Out</a>
+
+{% endblock %}
+
+
+{% block style %}
+	.card {
+		margin:auto;
+		margin-top:2%;
+		radius:10px 10px 10px 10px;
+	}
+	.card-divider {
+		background:#4BA3C3;
+		border:#4BA3C3;
+	}
+	.card-section{
+		border:#4BA3C3;
+	}
+	.button{
+		margin: 20px 10px 10px 10px;
+		background:#BA324F;
+	}
+	img {
+		border-radius: 100px;
+	}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="card" style="width: 80%; height: 30em;">
+<h1 align="center">{{ msgresult }}</h1>
+    <div class="theme">
+        <div class="row">
+        <div class= "12-large columns">
+
+                    <div class="form-group row">
+                        <form class="form-signin" action="/send_message/" method="POST">
+                        <label for="recipient" style="font-weight:500; font-size:50px;" class="text-primary" >Send to (Username): 
+                        <input type="text" id="recipient" name="recipient"  value= "{{ sendto }}"></label>
+
+                        <div class="form-group">
+                           <label for="message" style="font-weight:500; font-size:50px;" class="text-primary">Message :</label>
+                           <textarea class="form-control" rows="5" name="message" id="message"> {{ defmessage }} </textarea> 
+                        </div>
+                             <button type="submit" value="Send" name="send_message" class="btn btn-success id-submit">Send!</button>
+                        </form>
+                        </div>
+                        </div>
+                        </div>
+	<div class="row">
+    	<div class= "12-large columns">
+                        <label style="font-weight:500; font-size:50px;" class="text-primary">Get my messages</label> 
+                        <form class="form-signin" action="/get_message/" method="POST">
+                            
+                            {% if message_output|length > 0 %}
+                                <table class="table">
+                                <thead>
+                                    <tr>
+                                     <th> Message From </th>
+                                     <th> Date </th>
+                                     <th> Content </th>
+                                    </tr>
+                                </thead>
+                                {% for val in message_output %}
+                                <tbody>
+                                <tr> <td> {{ val.sender }} </td>
+                                     <td> {{ val.messagedatetime }} </td>
+                                     <td> {{ val.body }} </td>
+                                </tr>
+                                </tbody>
+                                {% endfor %}
+                             </table>
+                            {% endif %}
+                            <button type="submit" value="Send" name="action_rules" class="btn btn-success id-submit">Get!</button>
+                        </form>
+                        <div class="modal-footer">
+                        </div>
+                  
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}

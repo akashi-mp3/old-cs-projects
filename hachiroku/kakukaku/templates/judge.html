@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Judging</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/judge.js"></script>
+    <link href="../static/css/judgy.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="full">
+      
+    <div class="container-fluid">
+      <div class="logo">
+	<a href="/"><span class="logo-text">Kakukaku!!</span></a>
+      </div>
+
+
+      <h1>The keyword was: <span id="word">{{matchdata['word']}}</span></h1>
+
+      <div class="row">
+	<div class="col-sm-6 p-2 judgable">
+	  <h2>Image by {{matchdata['user_1']}}</h2>
+	  <img id="img-1" alt="" src="{{matchdata['img_1']}}"/>
+	</div>
+	<div class="col-sm-6 p-2 judgable">
+	  <h2>Image by {{matchdata['user_2']}}</h2>
+	  <img id="img-2"  src="{{matchdata['img_2']}}"/>
+	</div>
+      </div>
+
+	<form action="/judge" method="POST">
+	  <input id="winner" name="winner" type="hidden"/>
+	  <input class="btn" name="submit" type="submit" value="Pick Winner"/>
+	</form>
+
+    </div>
+  </body>
+  
+</html>

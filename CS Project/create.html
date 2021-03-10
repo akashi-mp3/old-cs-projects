@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Register Page</title>
+        <h2>Register</h2>
+	<style>
+		head, body {
+			background: #58ACFA;
+			   }
+		a:link, a:visited, a:hover, a:active {
+			color: black;
+			}
+	</style>
+    </head>
+    <body>
+        <form method="POST" action="create.py">
+            <b>Desired username:</b>
+            <input type="text" name="dUser" required>
+            <br>
+            <b>Type desired password:</b>
+            <input type="password" name="pass1" required>
+            <br>
+            <b>Type desired password again:</b>
+            <input type="password" name="pass2" required>
+            <br>
+            <input type="submit" name="Submit" value="Create account">
+        </form>
+        <br>
+        <b>Already have an account? Sign in <a href="index.html">here</a>!</b>
+    </body>
+</html>

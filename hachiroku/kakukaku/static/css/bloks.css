@@ -1,0 +1,50 @@
+.block {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+#doodle:hover {
+    cursor: crosshair;
+}
+
+.eraser-blok {
+    overflow: hidden;
+}
+
+.eraser {
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+    border: none;
+}
+
+#drawcircle {
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    border: 5px dotted;
+    border-radius: 50%;
+}
+
+body {
+    background: steelblue;
+}
+
+#doodle {
+    border: 1px solid black;
+}
+
+#savedImg {
+    border: 1px solid black;
+}
+
+.sub-block {
+    position: absolute;
+    visibility: hidden;
+    margin-left: -25px;
+}
+

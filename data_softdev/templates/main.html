@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block main %}
+<br/>  <br/>  <br/>  
+
+
+ <center>
+  <center><h1>The Fragile State Index</h1></center>
+  <center><h4><i>by Big L's Bad Boiz</i></h4></center>
+    <script>
+      codeList = ["{{ codes[0] }}"{% for i in codes[1:] %}, "{{ i }}"{% endfor %}]
+      </script>
+
+    <svg style="border-style: double;" id="scroll" width = "1400" height = "75" xmlns="http://www.w3.org/2000/svg"></svg><br>
+    <hr>
+
+    <svg style="border-style: dashed;" id="display" width = "1400" height = "615" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <mask maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox" id="flagMask">
+          <circle cx="0.5" cy="0.5" r="0.475" fill="white">
+        </mask>
+      </defs>
+    </svg><br>
+    
+    <br>
+
+    <hr>
+
+    <h2> Countries Depicted </h2>
+
+    <table>
+      {% for item in urldict %}
+      <TR>
+        <TD align="center">{{item.name}}</TD>
+         <TD align="center"><IMG src="{{item.flag}}"></TD>
+         <TD align="center">{{item.name}}</TD>
+      </TR>
+      <tr>     </tr>
+      {% endfor %}
+    </table>
+    </center>
+<script type="text/javascript" src="../static/app.js"></script>
+
+{% endblock %}
+ 

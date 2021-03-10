@@ -1,0 +1,96 @@
+﻿stivenP -- 2017-01-09 18:00
+      Added basic paths to app.py 
+      Added functions necessary to upload pics in app.py
+
+ogal7 -- 2017-01-09 14:50
+      Linked foundation with template, extended basic template to all other templates
+
+ogal7 -- 2017-01-09 23:30
+      Finished login page visuals      
+
+P0rkins -- 2017-01-10 14:00
+      Created data.db and relevant tables
+
+ogal7 -- 2017-01-11 2:37
+      finished first page of the form, started second page, added app routes and utils folder
+
+ogal7 -- 2017-01-11 21:50
+      added app routes, started login auth
+
+
+skabir8-- 2017-01-11 01:52
+      Finished basic eventbrite.py api fxn's
+
+ogal7 -- 2017-01-13
+	Created new users table, finished form1, logout works!
+		
+stivenP — 2017-01-14 
+	Reconfigured login and register. 
+	Created users.py, made basic formatting 
+	Changed form1 settings to radio boxed 
+
+ogal7 -- 2017-01-16
+	created personalinfo database table, finished login and registration/personal info functionality + data parsing for personal
+	info form
+
+stivenP — 2017-01-17  20:46
+	Finished Upload functionality 
+	Added addprofile to personal info 
+	formatted upload.html
+	Changed users table, added pfp column
+stivenP -- 2017-01-18 20:00
+	Added change functions to personal info 
+	
+ogal7 -- 2017-01-19 2:06
+	finished base code for user homepage
+	added routes for events and messages
+	
+ogal7 -- 2017-01-19 22:07
+      	finished date bar on user homepage
+	finished gendermatching functionality in matching algorithm
+	started the rest of gendermatching algo
+
+stivenP — 2017-01-21 20:00
+	Finished changed settings 
+
+ogal7 -- 2017-01-22 17:31
+	homepages display user profile pics
+	changed font
+	finished matching algorithm
+
+skabir8 -- 2017-01-22 22:18
+	created yelp api fxns
+	returns list of list which contains name,address,rating,image
+
+skabir8 -- 2017-01-22 22:54
+	Added database fxn's for getting each item for a user
+
+skabir8 -- 2017-01-23 01:33
+	Fixed issues with settings templates
+	Created fxns to render data payload in app.py
+	Made rest of fxns to get data in personainfo file
+	Added in javascript to render settings with prexisting data
+	Added rest of javascript on settings. Everything should render as is
+ogal7/stivenP -- 2017-01-23 14:47
+	debugged matches
+stivenP — 2017-01-23 22:00
+	-Added Functions to PersonalInfo
+	-Generated matches.html
+	-Debugged Settings
+
+P0rkins -- 2017-01-24 22:30
+	- messaging system close to completion
+	- created functions that allow user to send and get messages
+	- finished messaging system (backend)
+	- rudimentary front end work
+
+P0rkins -- 2017-01-25- 20:30
+	- created test accounts
+	- debugging
+
+skabir8 -- 2017-01-25 20:40
+	Loaded events with placeholder
+	made keys fxn
+	fixed eventbrite so duplicates dont show up
+	Made raw db fxns for getting info, fixed settings
+	fixed issue with urrl bad request
